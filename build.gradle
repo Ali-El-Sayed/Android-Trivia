@@ -1,0 +1,37 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+// Adding the apply plugin statement for safeargs
+buildscript {
+    ext {
+        kotlin_version = '1.4.10'
+        archLifecycleVersion = '1.1.1'
+        gradleVersion = '4.1.0'
+        supportlibVersion = '1.2.0'
+        dataBindingCompilerVersion = gradleVersion // Always need to be the same.
+    }
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        ext {
+            navigationVersion = "2.3.0"
+        }
+        classpath "com.android.tools.build:gradle:$gradleVersion"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        // Adding the safe-args dependency to the project Gradle file
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
