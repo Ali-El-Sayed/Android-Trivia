@@ -24,8 +24,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    productFlavors {
-    }
+    productFlavors {}
     buildFeatures {
         dataBinding true
         viewBinding = true
@@ -48,6 +47,7 @@ dependencies {
     implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion"
     // Material library => Navigation Drawer
     implementation "com.google.android.material:material:$version"
-
+    // Timber => Logging Lib
+    implementation 'com.jakewharton.timber:timber:4.7.1'
 
 }
